@@ -88,6 +88,9 @@ def ardfds_e(
     start_time = time.time()
     runtimes[0] = (time.time() - start_time)
     
+    if not direction_generator:
+        direction_generator = sphere_point_generator(n)
+    
     for k in range(maximum_iterations):
         alpha = (k + 2) / (96 * n * n * L)
         tau = 2 / (k + 2)
